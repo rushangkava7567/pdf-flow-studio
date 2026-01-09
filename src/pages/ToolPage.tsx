@@ -73,7 +73,11 @@ const ToolPage = () => {
         <section className="py-12 lg:py-16 bg-background">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="max-w-2xl mx-auto">
-              <FileUploader acceptedFiles={tool.acceptedFiles} />
+              <FileUploader 
+                acceptedFiles={tool.acceptedFiles} 
+                toolId={tool.id}
+                maxFiles={tool.id === "merge-pdf" || tool.id === "image-to-pdf" ? 20 : 1}
+              />
             </div>
           </div>
         </section>
